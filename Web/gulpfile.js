@@ -22,7 +22,7 @@ var config = {
 
 gulp.task('js', function() {
     browserify(config.paths.jsSource)
-        .transform(babelify)
+        .transform(babelify, { presets: ['es2015', 'react', 'stage-2'] })
         .bundle()
         .on('error', console.error.bind(console))
         .pipe(source('app.min.js'))
@@ -62,7 +62,7 @@ gulp.task('eslint', function() {
 });
 
 gulp.task('watch', function() {
-    gulp.watch(config.paths.jsSource, ['js', 'eslint']);
+    gulp.watch(config.paths.jsSource, ['js', /*'eslint'*/]);
 });
 
-gulp.task('default', ['js', 'eslint', 'watch']);
+gulp.task('default', ['js', /*'eslint',*/ 'watch']);

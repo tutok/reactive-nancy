@@ -85,6 +85,7 @@
   <ItemGroup>
     <Content Include="Content\js\app.min.js" />
     <Content Include="Content\js\src\app.js" />
+    <Content Include="Content\js\src\components\homePage.js" />
     <Content Include="packages.config" />
     <Content Include="package.json" />
     <Content Include="Index.cshtml" />
