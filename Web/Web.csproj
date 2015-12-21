@@ -85,11 +85,14 @@
   <ItemGroup>
     <Content Include="Content\js\app.min.js" />
     <Content Include="Content\js\src\app.js" />
+    <Content Include="Content\js\src\components\aboutPage.js" />
+    <Content Include="Content\js\src\components\header.js" />
     <Content Include="Content\js\src\components\homePage.js" />
     <Content Include="packages.config" />
     <Content Include="package.json" />
     <Content Include="Index.cshtml" />
     <Content Include="eslint.config.json" />
+    <Content Include="about.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
