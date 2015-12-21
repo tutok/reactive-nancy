@@ -61,6 +61,10 @@
       <HintPath>..\packages\Nancy.Viewengines.Razor.1.4.1\lib\net40\Nancy.ViewEngines.Razor.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -84,10 +88,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\js\app.min.js" />
-    <Content Include="Content\js\src\app.js" />
-    <Content Include="Content\js\src\components\aboutPage.js" />
-    <Content Include="Content\js\src\components\header.js" />
-    <Content Include="Content\js\src\components\homePage.js" />
+    <Content Include="Content\js\src\api\authorsData.js" />
+    <Content Include="Content\js\src\api\authorsApi.js" />
+    <Content Include="Content\js\src\app.jsx" />
+    <Content Include="Content\js\src\components\authorsList.jsx" />
+    <Content Include="Content\js\src\components\authorsPage.jsx" />
+    <Content Include="Content\js\src\components\aboutPage.jsx" />
+    <Content Include="Content\js\src\components\header.jsx" />
+    <Content Include="Content\js\src\components\homePage.jsx" />
     <Content Include="packages.config" />
     <Content Include="package.json" />
     <Content Include="Index.cshtml" />
@@ -105,6 +113,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthorsApiModule.cs" />
     <Compile Include="HomeModule.cs" />
     <Compile Include="Bootstraper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -5,8 +5,10 @@ var React = require('react');
 var Home = React.createClass({
     render: function() {
         return (
-            <div className="jumbotron">Hello from React</div>
-            );
+            <div>
+                <h1>Hello from React</h1>
+            </div>
+        );
     }
 });
 
