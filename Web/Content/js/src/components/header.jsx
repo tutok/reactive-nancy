@@ -1,8 +1,8 @@
 ﻿'use strict';
 
-var React = require('react');
+import React from 'react';
 
-var Header = React.createClass({
+let Header = React.createClass({
     render: function() {
         return (
             <div className="jumbotron">
@@ -16,4 +16,4 @@ var Header = React.createClass({
     }
 });
 
-module.exports = Header;
+export default Header;

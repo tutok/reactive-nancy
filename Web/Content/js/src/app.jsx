@@ -1,16 +1,16 @@
 ﻿'use strict';
 
-var React = require('react');
-var ReactDOM = require('react-dom');
-var Home = require('./components/homePage.jsx');
-var About = require('./components/aboutPage.jsx');
-var AuthorsPage = require('./components/authorsPage.jsx');
-var Header = require('./components/header.jsx');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Home from './components/homePage.jsx';
+import About from './components/aboutPage.jsx';
+import AuthorsPage from './components/authorsPage.jsx';
+import Header from './components/header.jsx';
 
 
 var App = React.createClass({
     render: function() {
-        var Child;
+        let Child;
 
         switch (this.props.route) {
         case 'about':

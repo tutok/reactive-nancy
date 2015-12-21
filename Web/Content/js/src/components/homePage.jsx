@@ -1,8 +1,8 @@
 ﻿'use strict';
 
-var React = require('react');
+import React from 'react';
 
-var Home = React.createClass({
+let Home = React.createClass({
     render: function() {
         return (
             <div>
@@ -12,4 +12,4 @@ var Home = React.createClass({
     }
 });
 
-module.exports = Home;
+export default Home; 

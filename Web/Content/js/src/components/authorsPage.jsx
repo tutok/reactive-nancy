@@ -1,10 +1,10 @@
 ﻿'use strict';
 
-var React = require('react');
-var AuthorsApi = require('../api/authorsApi');
-var AuthorsList = require('./authorsList.jsx');
+import React from 'react';
+import AuthorsApi from '../api/authorsApi';
+import AuthorsList from './authorsList.jsx';
 
-var AuthorsPage = React.createClass({
+let AuthorsPage = React.createClass({
     getInitialState: function () {
         return {
             authors: []
@@ -29,4 +29,4 @@ var AuthorsPage = React.createClass({
     }
 });
 
-module.exports = AuthorsPage;
+export default AuthorsPage;

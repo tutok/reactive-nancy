@@ -1,15 +1,15 @@
 ﻿'use strict';
 
-var React = require('react');
+import React from 'react';
 
-var About = React.createClass({
+let About = React.createClass({
     render: function() {
         return (
             <div>
                 <h1>About</h1>
             </div>
-            );
+        );
     }
 });
 
-module.exports = About;
+export default About;

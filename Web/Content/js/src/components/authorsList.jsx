@@ -1,15 +1,15 @@
 ﻿'use strict';
 
-var React = require('react');
-var AuthorsApi = require('../api/authorsApi');
+import React from 'react';
+import AuthorsApi from '../api/authorsApi';
 
-var AuthorsList = React.createClass({
+let AuthorsList = React.createClass({
     propTypes: {
         authors: React.PropTypes.array.isRequired
     },
 
     render: function () {
-        var createAuthorRow = function (author) {
+        let createAuthorRow = function (author) {
             return (
                 <tr key={author.id}>
                     <td><a href={"/#authors/" + author.id}>{author.id}</a></td>
@@ -34,4 +34,4 @@ var AuthorsList = React.createClass({
     }
 });
 
-module.exports = AuthorsList;
+export default AuthorsList;

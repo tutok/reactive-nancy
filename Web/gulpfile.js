@@ -61,8 +61,8 @@ gulp.task('eslint', function() {
         .pipe(eslint.format());
 });
 
-gulp.task('watch', function() {
-    gulp.watch(config.paths.jsSource, ['js', /*'eslint'*/]);
+gulp.task('watch', function () {
+    gulp.watch(['./Content/js/src/**/*.js', './Content/js/src/**/*.jsx'], ['js', /*'eslint'*/]);
 });
 
 gulp.task('default', ['js', /*'eslint',*/ 'watch']);
