@@ -90,12 +90,13 @@
     <Content Include="Content\js\app.min.js" />
     <Content Include="Content\js\src\api\authorsData.js" />
     <Content Include="Content\js\src\api\authorsApi.js" />
-    <Content Include="Content\js\src\app.js" />
+    <Content Include="Content\js\src\components\app.js" />
     <Content Include="Content\js\src\components\authorsList.js" />
     <Content Include="Content\js\src\components\authorsPage.js" />
     <Content Include="Content\js\src\components\aboutPage.js" />
     <Content Include="Content\js\src\components\header.js" />
     <Content Include="Content\js\src\components\homePage.js" />
+    <Content Include="Content\js\src\main.js" />
     <Content Include="Content\js\src\routes.js" />
     <Content Include="packages.config" />
     <Content Include="package.json" />

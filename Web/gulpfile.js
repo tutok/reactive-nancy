@@ -15,7 +15,7 @@ var open = require('gulp-open');
 var config = {
     paths: {
         html: '',
-        jsSource: './Content/js/src/app.js',
+        jsSource: './Content/js/src/main.js',
         jsDestination: './Content/js'
     }
 }

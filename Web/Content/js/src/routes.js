@@ -1,17 +1,18 @@
 ﻿'use strict';
 
 import React from 'react';
-import { Router, Route, DefaultRoute, Link } from 'react-router';
+import { Router, Route, IndexRoute, Link } from 'react-router';
 
-import App from './app.jsx';
+import App from './components/app';
 import HomePage from './components/homePage';
 import AuthorsPage from './components/authorsPage';
+import AboutPage from './components/aboutPage';
 
 let routes = (
-    <Route name="app" path="/" handler={App}>
-        <DefaultRoute handler={HomePage} />
-        <Route name="authors" handler={AuthorsPage} />
-        <Route name="about" handler={AboutPage} />
+    <Route path="/" component={App}>
+        <IndexRoute component={HomePage} />
+        <Route path="authors" component={AuthorsPage} />
+        <Route path="about" component={AboutPage} />
     </Route>
 );
 
