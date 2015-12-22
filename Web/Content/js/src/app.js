@@ -2,10 +2,10 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from './components/homePage.jsx';
-import About from './components/aboutPage.jsx';
-import AuthorsPage from './components/authorsPage.jsx';
-import Header from './components/header.jsx';
+import Home from './components/homePage';
+import About from './components/aboutPage';
+import AuthorsPage from './components/authorsPage';
+import Header from './components/header';
 
 
 var App = React.createClass({
@@ -31,7 +31,6 @@ var App = React.createClass({
         );
     }
 });
-
 
 
 function render() {

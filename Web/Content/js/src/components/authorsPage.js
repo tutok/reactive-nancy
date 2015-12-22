@@ -2,7 +2,7 @@
 
 import React from 'react';
 import AuthorsApi from '../api/authorsApi';
-import AuthorsList from './authorsList.jsx';
+import AuthorsList from './authorsList';
 
 let AuthorsPage = React.createClass({
     getInitialState: function () {

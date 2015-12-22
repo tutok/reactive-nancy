@@ -1,7 +1,6 @@
 ﻿'use strict';
 
 import React from 'react';
-import AuthorsApi from '../api/authorsApi';
 
 let AuthorsList = React.createClass({
     propTypes: {

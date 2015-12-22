@@ -4,8 +4,8 @@ import React from 'react';
 import { Router, Route, DefaultRoute, Link } from 'react-router';
 
 import App from './app.jsx';
-import HomePage from './components/homePage.jsx';
-import AuthorsPage from './components/authorsPage.jsx';
+import HomePage from './components/homePage';
+import AuthorsPage from './components/authorsPage';
 
 let routes = (
     <Route name="app" path="/" handler={App}>
