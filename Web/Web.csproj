@@ -96,6 +96,7 @@
     <Content Include="Content\js\src\components\aboutPage.jsx" />
     <Content Include="Content\js\src\components\header.jsx" />
     <Content Include="Content\js\src\components\homePage.jsx" />
+    <Content Include="Content\js\src\routes.js" />
     <Content Include="packages.config" />
     <Content Include="package.json" />
     <Content Include="Index.cshtml" />
