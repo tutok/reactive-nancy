@@ -1,15 +1,17 @@
 ﻿'use strict';
 
 import React from 'react';
+import { Link } from 'react-router';
+
 
 let Header = React.createClass({
     render: function() {
         return (
             <div className="jumbotron">
                 <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/#authors">Authors</a></li>
-                    <li><a href="/#about">About</a></li>
+                    <li><Link to={`/`}>Home</Link></li>
+                    <li><Link to={`/authors`}>Authors</Link></li>
+                    <li><Link to={`/about`}>About</Link></li>
                 </ul>
             </div>
             );
