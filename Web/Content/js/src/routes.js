@@ -9,11 +9,26 @@ import AuthorsPage from './components/authorsPage';
 import AboutPage from './components/aboutPage';
 import NotFoundPage from './components/notFoundPage';
 
+
+
+function onEnter(location, transition, callback) {
+    if (confirm('Are you shure?') == false) {
+        transition.to('/about');
+    } else {
+        callback();
+    }
+}
+
+function onLeave() {
+    
+}
+
+
 let routes = (
     <Route path="/" component={App}>
         <IndexRoute component={HomePage} /> 
         <Route path="authors" component={AuthorsPage} />
-        <Route path="about" component={AboutPage} />
+        <Route path="about" component={AboutPage} onEnter={onEnter} onLeave={onLeave}/>
         <Redirect from="about-us" to="about" />
         <Redirect from="about/*" to="about" />
         <Route path="*" component={NotFoundPage}/>
