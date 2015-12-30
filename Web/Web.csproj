@@ -91,6 +91,7 @@
     <Content Include="Content\js\src\api\authorsData.js" />
     <Content Include="Content\js\src\api\authorsApi.js" />
     <Content Include="Content\js\src\components\app.js" />
+    <Content Include="Content\js\src\components\authorForm.js" />
     <Content Include="Content\js\src\components\authorsList.js" />
     <Content Include="Content\js\src\components\authorsPage.js" />
     <Content Include="Content\js\src\components\aboutPage.js" />
@@ -117,6 +118,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuthorsApiModule.cs" />
+    <Content Include="Content\js\src\components\manageAuthorPage.js" />
     <Compile Include="HomeModule.cs" />
     <Compile Include="Bootstraper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
