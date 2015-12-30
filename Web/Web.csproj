@@ -98,6 +98,7 @@
     <Content Include="Content\js\src\components\header.js" />
     <Content Include="Content\js\src\components\homePage.js" />
     <Content Include="Content\js\src\components\NotFoundPage.js" />
+    <Content Include="Content\js\src\components\textInput.js" />
     <Content Include="Content\js\src\main.js" />
     <Content Include="Content\js\src\routes.js" />
     <Content Include="packages.config" />

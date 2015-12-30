@@ -1,20 +1,15 @@
 ﻿'use strict';
 
 import React from 'react';
+import TextInput from './TextInput';
 
 let AuthorForm = React.createClass({
     render: function () {
         return (
             <form>
                 <h1>Manage Author</h1>
-                <div>
-                    <label htmlFor="firstName">First Name</label>
-                    <input type="text" name="firstName" placeholder="First Name" ref="firstName" onChange={this.props.onChange} value={this.props.author.firstName}/>
-                </div>
-                <div>
-                    <label htmlFor="lastName">Last Name</label>
-                    <input type="text" name="lastName" placeholder="Last Name" ref="lastName" onChange={this.props.onChange} value={this.props.author.lastName}/>
-                </div>
+                <TextInput name="firstName" label="First Name" value={this.props.author.firstName} onChange={this.props.onChange} />
+                <TextInput name="lastName" label="Last Name" value={this.props.author.lastName} onChange={this.props.onChange} />
                 <input type="submit" value="Save"/>
             </form>
         );
