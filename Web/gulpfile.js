@@ -1,4 +1,4 @@
-﻿/// <binding BeforeBuild='eslint, js' ProjectOpened='watch' />
+﻿/// <binding BeforeBuild='eslint, js, css' ProjectOpened='watch' />
 "use strict";
 
 var gulp = require('gulp');
@@ -6,19 +6,31 @@ var browserify = require('browserify');
 var babelify = require('babelify');
 var source = require('vinyl-source-stream');
 var eslint = require('gulp-eslint');
+var less = require('gulp-less');
 
 var connect = require('gulp-connect');
 var open = require('gulp-open');
-
 
 
 var config = {
     paths: {
         html: '',
         jsSource: './Content/js/src/main.js',
-        jsDestination: './Content/js'
+        jsDestination: './Content/js',
+
+        lessSource: [
+            './node_modules/bootstrap-less/bootstrap/bootstrap.less',
+            './node_modules/toastr/toastr.less'],
+        cssDestination: './Content/css'
     }
 }
+
+gulp.task('css', function () {
+    gulp.src(config.paths.lessSource)
+        .pipe(less())
+        .on('error', console.error.bind(console))
+        .pipe(gulp.dest(config.paths.cssDestination));
+});
 
 gulp.task('js', function() {
     browserify(config.paths.jsSource)
@@ -65,4 +77,4 @@ gulp.task('watch', function () {
     gulp.watch(['./Content/js/src/**/*.js', './Content/js/src/**/*.jsx'], ['js', /*'eslint'*/]);
 });
 
-gulp.task('default', ['js', /*'eslint',*/ 'watch']);
+gulp.task('default', ['js', /*'eslint',*/ 'css', 'watch']);
