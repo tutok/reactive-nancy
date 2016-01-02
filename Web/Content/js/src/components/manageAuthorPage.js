@@ -1,10 +1,13 @@
 ﻿'use strict';
 
 import React from 'react';
+import { Router, History } from 'react-router';
 import AuthorForm from './authorForm';
 import AuthorsApi from './../api/authorsApi';
 
 let ManageAuthorPage = React.createClass({
+    mixins: [ History ],
+
     getInitialState: function() {
         return {
             author: { id: '', firstName: '', lastName: '' }
@@ -23,6 +26,7 @@ let ManageAuthorPage = React.createClass({
         event.preventDefault();
 
         AuthorsApi.saveAuthor(this.state.author);
+        this.history.pushState(null, `/authors`);
     },
 
     render: function () {
