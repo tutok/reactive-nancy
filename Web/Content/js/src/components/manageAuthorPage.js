@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Router, History } from 'react-router';
+import ToastR from 'toastr';
 import AuthorForm from './authorForm';
 import AuthorsApi from './../api/authorsApi';
 
@@ -26,6 +27,7 @@ let ManageAuthorPage = React.createClass({
         event.preventDefault();
 
         AuthorsApi.saveAuthor(this.state.author);
+        ToastR.success('Author saved.');
         this.history.pushState(null, `/authors`);
     },
 
