@@ -6,8 +6,8 @@ import TextInput from './TextInput';
 let AuthorForm = React.createClass({
     propTypes: {
         author: React.PropTypes.object.isRequired,
-        onSaved: React.PropTypes.func.isReqired,
-        onChange: React.PropTypes.func.isReqired,
+        onSaved: React.PropTypes.func.isRequired,
+        onChange: React.PropTypes.func.isRequired,
         errors: React.PropTypes.object
     },
 

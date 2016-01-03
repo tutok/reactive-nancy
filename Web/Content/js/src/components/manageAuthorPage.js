@@ -1,19 +1,27 @@
 ﻿'use strict';
 
 import React from 'react';
-import { Router, History } from 'react-router';
+import { Router, History, Lifecycle } from 'react-router';
 import ToastR from 'toastr';
 import AuthorForm from './authorForm';
 import AuthorsApi from './../api/authorsApi';
 
 let ManageAuthorPage = React.createClass({
-    mixins: [ History ],
+
+    mixins: [ Lifecycle, History ],
 
     getInitialState: function() {
         return {
             author: { id: '', firstName: '', lastName: '' },
+            isSaved: false,
             errors: {}
         };
+    },
+
+    routerWillLeave(nextLocation) {
+        if (!this.state.isSaved) {
+            return 'Your work is not saved! Are you sure you want to leave?';
+        }
     },
 
     authorFormIsValid: function() {
@@ -43,7 +51,10 @@ let ManageAuthorPage = React.createClass({
         var value = event.target.value;
         this.state.author[field] = value;
 
-        return this.setState({ author: this.state.author });
+        return this.setState({
+            author: this.state.author,
+            isSaved: false
+    });
     },
 
     saveAuthor: function(event) {
@@ -54,13 +65,17 @@ let ManageAuthorPage = React.createClass({
         }
 
         AuthorsApi.saveAuthor(this.state.author);
+        this.setState({ isSaved: true });
         ToastR.success('Author saved.');
         this.history.pushState(null, `/authors`);
     },
 
     render: function () {
         return (
-            <AuthorForm author={ this.state.author } onChange={this.setAuthorState} onSave={this.saveAuthor} errors={this.state.errors} />
+            <AuthorForm author={ this.state.author }
+                        onChange={ this.setAuthorState }
+                        onSave={ this.saveAuthor }
+                        errors={ this.state.errors } />
         );
     }
 });

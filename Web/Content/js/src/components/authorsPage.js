@@ -6,6 +6,7 @@ import AuthorsApi from '../api/authorsApi';
 import AuthorsList from './authorsList';
 
 let AuthorsPage = React.createClass({
+
     getInitialState: function () {
         return {
             authors: []

@@ -9,7 +9,6 @@ var eslint = require('gulp-eslint');
 var less = require('gulp-less');
 
 var connect = require('gulp-connect');
-var open = require('gulp-open');
 
 
 var config = {

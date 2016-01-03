@@ -13,9 +13,9 @@ import NotFoundPage from './components/notFoundPage';
 
 function onEnter(location, transition, callback) {
     if (confirm('Are you shure?') == false) {
-        transition.to('/about');
+        //transition.to('/about');
     } else {
-        callback();
+       // callback();
     }
 }
 
@@ -24,7 +24,7 @@ function onLeave() {
 }
 
 
-let routes = (
+let Routes = (
     <Route path="/" component={App}>
         <IndexRoute component={HomePage} /> 
         <Route path="authors" component={AuthorsPage} />
@@ -36,4 +36,4 @@ let routes = (
     </Route>
 );
 
-export default routes;
+export default Routes;
