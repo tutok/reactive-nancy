@@ -18,6 +18,14 @@ let ManageAuthorPage = React.createClass({
         };
     },
 
+    componentWillMount: function() {
+        let authorId = this.props.params.id;
+
+        if (authorId) {
+            this.setState({author: AuthorsApi.getAuthorById(authorId)});
+        }
+    },
+
     routerWillLeave(nextLocation) {
         if (!this.state.isSaved) {
             return 'Your work is not saved! Are you sure you want to leave?';
