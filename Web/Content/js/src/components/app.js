@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { RouteHandler } from 'react-router';
-import Header from './header';
+import Header from './shared/header';
 
 
 let App = React.createClass({

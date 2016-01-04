@@ -97,7 +97,7 @@
     <Content Include="Content\js\src\components\authorsList.js" />
     <Content Include="Content\js\src\components\authorsPage.js" />
     <Content Include="Content\js\src\components\aboutPage.js" />
-    <Content Include="Content\js\src\components\header.js" />
+    <Content Include="Content\js\src\components\shared\header.js" />
     <Content Include="Content\js\src\components\homePage.js" />
     <Content Include="Content\js\src\components\NotFoundPage.js" />
     <Content Include="Content\js\src\components\textInput.js" />
@@ -126,7 +126,9 @@
     <Compile Include="Bootstraper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Content\js\src\components\author\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
