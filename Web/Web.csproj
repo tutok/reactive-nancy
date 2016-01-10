@@ -101,6 +101,7 @@
     <Content Include="Content\js\src\components\home\homePage.js" />
     <Content Include="Content\js\src\components\errors\NotFoundPage.js" />
     <Content Include="Content\js\src\components\shared\textInput.js" />
+    <Content Include="Content\js\src\dispatcher\appDispatcher.js" />
     <Content Include="Content\js\src\main.js" />
     <Content Include="Content\js\src\routes.js" />
     <Content Include="packages.config" />
