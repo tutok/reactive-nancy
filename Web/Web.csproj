@@ -90,6 +90,7 @@
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\toastr.css" />
     <Content Include="Content\js\app.min.js" />
+    <Content Include="Content\js\src\actions\authorActions.js" />
     <Content Include="Content\js\src\api\authorsData.js" />
     <Content Include="Content\js\src\api\authorsApi.js" />
     <Content Include="Content\js\src\components\app.js" />
@@ -101,6 +102,7 @@
     <Content Include="Content\js\src\components\home\homePage.js" />
     <Content Include="Content\js\src\components\errors\NotFoundPage.js" />
     <Content Include="Content\js\src\components\shared\textInput.js" />
+    <Content Include="Content\js\src\constants\actionTypes.js" />
     <Content Include="Content\js\src\dispatcher\appDispatcher.js" />
     <Content Include="Content\js\src\main.js" />
     <Content Include="Content\js\src\routes.js" />
