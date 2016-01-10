@@ -106,6 +106,7 @@
     <Content Include="Content\js\src\dispatcher\appDispatcher.js" />
     <Content Include="Content\js\src\main.js" />
     <Content Include="Content\js\src\routes.js" />
+    <Content Include="Content\js\src\stores\authorStore.js" />
     <Content Include="packages.config" />
     <Content Include="package.json" />
     <Content Include="Index.cshtml" />

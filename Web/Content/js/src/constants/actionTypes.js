@@ -1,7 +1,7 @@
 ﻿'use strict';
 
-import { keyMirror } from 'react/lib/keyMirror';
+//import { keyMirror } from 'react/lib/keyMirror';
 
-export default keyMirror( {
-    CREATE_AUTHOR: null
-}};
+export default {
+    CREATE_AUTHOR: 'CREATE_AUTHOR'
+};

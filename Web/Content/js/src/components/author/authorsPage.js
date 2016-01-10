@@ -2,23 +2,16 @@
 
 import React from 'react';
 import { Router, Link } from 'react-router';
-import AuthorsApi from '../../api/authorsApi';
+import AuthorActions from './../../actions/authorActions';
+import AuthorStore from './../../stores/authorStore';
 import AuthorsList from './authorsList';
 
 let AuthorsPage = React.createClass({
 
     getInitialState: function () {
         return {
-            authors: []
+            authors: AuthorStore.getAllAuthors()
         };
-    },
-
-    componentDidMount: function () {
-        if (this.isMounted()) {
-            this.setState({
-                authors: AuthorsApi.getAllAuthors()
-            });
-        }
     },
 
     render: function () {

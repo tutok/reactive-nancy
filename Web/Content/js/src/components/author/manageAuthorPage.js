@@ -4,7 +4,8 @@ import React from 'react';
 import { Router, History, Lifecycle } from 'react-router';
 import ToastR from 'toastr';
 import AuthorForm from './authorForm';
-import AuthorsApi from './../../api/authorsApi';
+import AuthorActions from './../../actions/authorActions';
+import AuthorStore from './../../stores/authorStore';
 
 let ManageAuthorPage = React.createClass({
 
@@ -22,7 +23,7 @@ let ManageAuthorPage = React.createClass({
         let authorId = this.props.params.id;
 
         if (authorId) {
-            this.setState({author: AuthorsApi.getAuthorById(authorId)});
+            this.setState({author: AuthorStore.getAuthorById(authorId)});
         }
     },
 
@@ -72,7 +73,7 @@ let ManageAuthorPage = React.createClass({
             return;
         }
 
-        AuthorsApi.saveAuthor(this.state.author);
+        AuthorActions.createAuthor(this.state.author);
         this.setState({ isSaved: true });
         ToastR.success('Author saved.');
         this.history.pushState(null, `/authors`);
