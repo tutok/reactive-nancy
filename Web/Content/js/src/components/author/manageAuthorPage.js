@@ -73,7 +73,12 @@ let ManageAuthorPage = React.createClass({
             return;
         }
 
-        AuthorActions.createAuthor(this.state.author);
+        if (this.state.author.id) {
+            AuthorActions.updateAuthor(this.state.author);
+        } else {
+            AuthorActions.saveAuthor(this.state.author);
+        }
+
         this.setState({ isSaved: true });
         ToastR.success('Author saved.');
         this.history.pushState(null, `/authors`);

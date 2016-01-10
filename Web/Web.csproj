@@ -91,6 +91,7 @@
     <Content Include="Content\css\toastr.css" />
     <Content Include="Content\js\app.min.js" />
     <Content Include="Content\js\src\actions\authorActions.js" />
+    <Content Include="Content\js\src\actions\initializeActions.js" />
     <Content Include="Content\js\src\api\authorsData.js" />
     <Content Include="Content\js\src\api\authorsApi.js" />
     <Content Include="Content\js\src\components\app.js" />

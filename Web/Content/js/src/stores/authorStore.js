@@ -24,7 +24,7 @@ let AuthorStore = Object.assign({}, EventEmitter.prototype, {
         return _authors;
     },
 
-    getAuthorBtId: function(id) {
+    getAuthorById: function(id) {
         return _authors.find(function(element) {
             if (element.id === id) {
                 return true;
@@ -38,11 +38,26 @@ let AuthorStore = Object.assign({}, EventEmitter.prototype, {
 
 Dispatcher.register(function(action) {
     switch (action.actionType) {
+        case ActionTypes.INITIALIZE:
+            _authors = action.initialData.authors;
+            AuthorStore.emitChange();
+            break;
+
         case ActionTypes.CREATE_AUTHOR:
             _authors.push(action.author);
             AuthorStore.emitChange();
+            break;
+
+        case ActionTypes.UPDATE_AUTHOR:
+            let existingAuthor = _authors.find(element => element.id === action.author.id);
+            let existingAuthorIndex = _authors.indexOf(existingAuthor);
+            _authors.splice(existingAuthorIndex, 1, action.author);
+
+            AuthorStore.emitChange();
+            break;
 
         default:
+            //no op
     }
 });
 
