@@ -1,7 +1,7 @@
 ﻿'use strict';
 
 import React from 'react';
-import TextInput from './shared/TextInput';
+import TextInput from './../shared/TextInput';
 
 let AuthorForm = React.createClass({
     propTypes: {

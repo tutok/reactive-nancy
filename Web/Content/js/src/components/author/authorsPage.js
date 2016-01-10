@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Router, Link } from 'react-router';
-import AuthorsApi from '../api/authorsApi';
+import AuthorsApi from '../../api/authorsApi';
 import AuthorsList from './authorsList';
 
 let AuthorsPage = React.createClass({

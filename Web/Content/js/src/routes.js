@@ -4,9 +4,9 @@ import React from 'react';
 import { Router, Route, IndexRoute, Link, Redirect } from 'react-router';
 import App from './components/app';
 import HomePage from './components/home/homePage';
-import AuthorsPage from './components/authorsPage';
-import ManageAuthorPage from './components/manageAuthorPage';
-import AboutPage from './components/aboutPage';
+import AuthorsPage from './components/author/authorsPage';
+import ManageAuthorPage from './components/author/manageAuthorPage';
+import AboutPage from './components/about/aboutPage';
 import NotFoundPage from './components/errors/notFoundPage';
 
 

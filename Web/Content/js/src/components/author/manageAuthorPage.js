@@ -4,7 +4,7 @@ import React from 'react';
 import { Router, History, Lifecycle } from 'react-router';
 import ToastR from 'toastr';
 import AuthorForm from './authorForm';
-import AuthorsApi from './../api/authorsApi';
+import AuthorsApi from './../../api/authorsApi';
 
 let ManageAuthorPage = React.createClass({
 
