@@ -2,7 +2,7 @@
 
 import { Dispatcher } from '../../../dispatcher/appDispatcher';
 import AuthorsApi from '../../../api/authorsApi';
-import ActionTypes from '../../../constants/actionTypes';
+import ActionTypes from './actionTypes';
 
 let AuthorActions = {
     createAuthor: function(author) {

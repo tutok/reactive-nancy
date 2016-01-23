@@ -2,6 +2,7 @@
 
 import { Dispatcher } from '../dispatcher/appDispatcher';
 import ActionTypes from '../constants/actionTypes';
+import AuthorActionsTypes from '../components/author/actions/actionTypes';
 import { EventEmitter } from 'events';
 import { createStore } from 'redux';
 
@@ -47,12 +48,12 @@ function dispather(state = {a: 0}, action) {
             AuthorStore.emitChange();
             break;
 
-        case ActionTypes.CREATE_AUTHOR:
+        case AuthorActionsTypes.CREATE_AUTHOR:
             _authors.push(action.author);
             AuthorStore.emitChange();
             break;
 
-        case ActionTypes.UPDATE_AUTHOR:
+        case AuthorActionsTypes.UPDATE_AUTHOR:
             let existingAuthor = _authors.find(element => element.id === action.author.id);
             let existingAuthorIndex = _authors.indexOf(existingAuthor);
             _authors.splice(existingAuthorIndex, 1, action.author);
@@ -60,7 +61,7 @@ function dispather(state = {a: 0}, action) {
             AuthorStore.emitChange();
             break;
 
-        case ActionTypes.DELETE_AUTHOR:
+        case AuthorActionsTypes.DELETE_AUTHOR:
 
             let authorToDelete = _authors.find(element => element.id === action.id);
             let indexOfAuthorToDelete = _authors.indexOf(authorToDelete);
