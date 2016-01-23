@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Link } from 'react-router';
-import AuthorActions from './../../actions/authorActions';
+import AuthorActions from './actions/authorActions';
 import Toastr from 'toastr';
 
 let AuthorsList = React.createClass({

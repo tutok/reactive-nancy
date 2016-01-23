@@ -4,7 +4,7 @@ import React from 'react';
 import { Router, History, Lifecycle } from 'react-router';
 import ToastR from 'toastr';
 import AuthorForm from './authorForm';
-import AuthorActions from './../../actions/authorActions';
+import AuthorActions from './actions/authorActions';
 import AuthorStore from './../../stores/authorStore';
 
 let ManageAuthorPage = React.createClass({
@@ -76,7 +76,7 @@ let ManageAuthorPage = React.createClass({
         if (this.state.author.id) {
             AuthorActions.updateAuthor(this.state.author);
         } else {
-            AuthorActions.saveAuthor(this.state.author);
+            AuthorActions.createAuthor(this.state.author);
         }
 
         this.setState({ isSaved: true });

@@ -3,10 +3,11 @@
 import { Dispatcher } from '../dispatcher/appDispatcher';
 import ActionTypes from '../constants/actionTypes';
 import { EventEmitter } from 'events';
+import { createStore } from 'redux';
+
+
 const CHANGE_EVENT = 'change';
-
 let _authors = [];
-
 let AuthorStore = Object.assign({}, EventEmitter.prototype, {
     addChangeListener: function(callback) {
         this.on(CHANGE_EVENT, callback);
@@ -36,7 +37,10 @@ let AuthorStore = Object.assign({}, EventEmitter.prototype, {
     }
 });
 
-Dispatcher.register(function(action) {
+
+function dispather(state = {a: 0}, action) {
+    debugger;
+
     switch (action.actionType) {
         case ActionTypes.INITIALIZE:
             _authors = action.initialData.authors;
@@ -68,6 +72,13 @@ Dispatcher.register(function(action) {
         default:
             //no op
     }
-});
+
+    return state;
+}
+Dispatcher.register(action => dispather(0, action));
+
+const store = createStore(dispather);
+
+debugger;
 
 export default AuthorStore;

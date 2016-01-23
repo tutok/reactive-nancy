@@ -1,8 +1,8 @@
 ﻿'use strict';
 
-import { Dispatcher } from '../dispatcher/appDispatcher';
-import AuthorsApi from '../api/authorsApi';
-import ActionTypes from '../constants/actionTypes';
+import { Dispatcher } from '../../../dispatcher/appDispatcher';
+import AuthorsApi from '../../../api/authorsApi';
+import ActionTypes from '../../../constants/actionTypes';
 
 let AuthorActions = {
     createAuthor: function(author) {

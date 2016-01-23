@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { Router, Link } from 'react-router';
-import AuthorActions from './../../actions/authorActions';
 import AuthorStore from './../../stores/authorStore';
 import AuthorsList from './authorsList';
 
