@@ -4,7 +4,9 @@ import React from 'react';
 import { Router, History, Lifecycle } from 'react-router';
 import ToastR from 'toastr';
 import AuthorForm from './authorForm';
-import AuthorActions from './actions/actions';
+import { Dispatcher } from '../../dispatcher/appDispatcher';
+import { createAuthor, updateAuthor } from './actions/actions';
+
 import AuthorStore from './../../stores/authorStore';
 
 let ManageAuthorPage = React.createClass({
@@ -72,11 +74,13 @@ let ManageAuthorPage = React.createClass({
         if (!this.authorFormIsValid()) {
             return;
         }
-
+        debugger;
         if (this.state.author.id) {
-            AuthorActions.updateAuthor(this.state.author);
+            Dispatcher.dispatch(updateAuthor(this.state.author));
+            //AuthorActions.updateAuthor(this.state.author);
         } else {
-            AuthorActions.createAuthor(this.state.author);
+            Dispatcher.dispatch(createAuthor(this.state.author));
+            //AuthorActions.createAuthor(this.state.author);
         }
 
         this.setState({ isSaved: true });

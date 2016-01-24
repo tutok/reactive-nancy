@@ -95,7 +95,6 @@
     <Content Include="Content\js\src\api\authorsData.js" />
     <Content Include="Content\js\src\api\authorsApi.js" />
     <Content Include="Content\js\src\components\app.js" />
-    <Content Include="Content\js\src\components\author\actions\actionTypes.js" />
     <Content Include="Content\js\src\components\author\authorForm.js" />
     <Content Include="Content\js\src\components\author\authorsList.js" />
     <Content Include="Content\js\src\components\author\authorsPage.js" />

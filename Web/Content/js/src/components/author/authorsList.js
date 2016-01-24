@@ -2,7 +2,8 @@
 
 import React from 'react';
 import { Link } from 'react-router';
-import AuthorActions from './actions/actions';
+import { Dispatcher } from '../../dispatcher/appDispatcher';
+import { deleteAuthor } from './actions/actions';
 import Toastr from 'toastr';
 
 let AuthorsList = React.createClass({
@@ -10,9 +11,10 @@ let AuthorsList = React.createClass({
         authors: React.PropTypes.array.isRequired
     },
 
-    deleteAuthor: function(id, event) {
+    _deleteAuthor: function(id, event) {
         event.preventDefault();
-        AuthorActions.deleteAuthor(id);
+
+        Dispatcher.dispatch(deleteAuthor(id));
         Toastr.success('Author deleted');
     },
 
@@ -20,7 +22,7 @@ let AuthorsList = React.createClass({
         let createAuthorRow = function (author) {
             return (
                 <tr key={author.id}>
-                    <td><a href="#" onClick={this.deleteAuthor.bind(this, author.id)}>Delete</a></td>
+                    <td><a href="#" onClick={this._deleteAuthor.bind(this, author.id)}>Delete</a></td>
                     <td><Link to={`/author/${author.id}`}>{author.id}</Link></td>
                     <td>{author.firstName} {author.lastName}</td>
                 </tr>
