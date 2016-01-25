@@ -10,7 +10,7 @@ let Author = React.createClass({
         author: React.PropTypes.object.isRequired,
         onDelete: React.PropTypes.func.isRequired
     },
-   
+
     render: function() {
         return (
             <tr>
