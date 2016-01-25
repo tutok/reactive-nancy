@@ -1,25 +1,23 @@
 ﻿'use strict';
 
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import { Dispatcher } from '../../dispatcher/appDispatcher';
 import { deleteAuthor } from './actions/actions';
 import Toastr from 'toastr';
 import Author from './author';
 
-let AuthorsList = React.createClass({
-    propTypes: {
-        authors: React.PropTypes.array.isRequired
-    },
 
-    _deleteAuthor: function(id, event) {
+class AuthorsList extends Component{
+
+    _deleteAuthor(id, event) {
         event.preventDefault();
 
         Dispatcher.dispatch(deleteAuthor(id));
         Toastr.success('Author deleted');
-    },
+    }
 
-    render: function () {
+    render() {
         return (
             <table>
                 <thead>
@@ -37,6 +35,10 @@ let AuthorsList = React.createClass({
             </table>
         );
     }
-});
+};
+
+AuthorsList.propTypes = {
+    authors: React.PropTypes.array.isRequired
+};
 
 export default AuthorsList;
