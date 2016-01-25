@@ -20,12 +20,6 @@ let AuthorsList = React.createClass({
     },
 
     render: function () {
-        let createAuthorRow = function (author) {
-            return (
-                <Author key={author.id} author={author} onDelete={this._deleteAuthor.bind(this, author.id)}> </Author>
-            );
-        };
-
         return (
             <table>
                 <thead>
@@ -36,7 +30,9 @@ let AuthorsList = React.createClass({
                     </tr>
                 </thead>
                 <tbody>
-                    {this.props.authors.map(createAuthorRow, this)}
+                    {this.props
+                        .authors
+                        .map(x => (<Author key={x.id} author={x} onDelete={this._deleteAuthor.bind(this, x.id)}> </Author>), this)}
                 </tbody>
             </table>
         );
