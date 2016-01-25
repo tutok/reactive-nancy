@@ -1,17 +1,12 @@
 ﻿'use strict';
 
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import { Dispatcher } from '../../dispatcher/appDispatcher';
 
 
-let Author = React.createClass({
-    propTypes: {
-        author: React.PropTypes.object.isRequired,
-        onDelete: React.PropTypes.func.isRequired
-    },
-
-    render: function() {
+class Author extends Component{
+    render() {
         return (
             <tr>
                 <td><a href="#" onClick={this.props.onDelete}>Delete</a></td>
@@ -20,6 +15,12 @@ let Author = React.createClass({
             </tr>
         );
     }
-});
+};
+
+Author.propTypes = {
+    author: React.PropTypes.object.isRequired,
+    onDelete: React.PropTypes.func.isRequired
+};
+
 
 export default Author;
