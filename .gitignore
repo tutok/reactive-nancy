@@ -68,6 +68,9 @@ ipch/
 *.sdf
 *.cachefile
 
+# Visual Studio project
+.vs/
+
 # Visual Studio profiler
 *.psess
 *.vsp
