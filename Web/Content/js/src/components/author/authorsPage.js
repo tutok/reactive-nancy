@@ -1,30 +1,31 @@
 ﻿'use strict';
 
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import { Router, Link } from 'react-router';
 import AuthorStore from './../../stores/authorStore';
 import AuthorsList from './authorsList';
 
-let AuthorsPage = React.createClass({
-    getInitialState: function() {
-        return {
+class AuthorsPage extends Component{
+    constructor(props) {
+        super(props);
+        
+        this.state = {
             authors: AuthorStore.getAllAuthors()
         };
-    },
+        this._onChange = this._onChange.bind(this);
 
-    componentWillMount: function() {
         AuthorStore.addChangeListener(this._onChange);
-    },
+    }
 
-    componentWillUnmount: function() {
+    componentWillUnmount() {
         AuthorStore.removeChangeListener(this._onChange);
-    },
+    }
 
-    _onChange: function() {
+    _onChange() {
         this.setState({ authors: AuthorStore.getAllAuthors() });
-    },
+    }
 
-    render: function () {
+    render() {
         return (
             <div>
                 <h1>Authors</h1>
@@ -33,6 +34,6 @@ let AuthorsPage = React.createClass({
             </div>
         );
     }
-});
+};
 
 export default AuthorsPage;

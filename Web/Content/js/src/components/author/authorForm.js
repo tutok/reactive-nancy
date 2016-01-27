@@ -1,17 +1,10 @@
 ﻿'use strict';
 
-import React from 'react';
+import React, { Component, PropTypes} from 'react';
 import TextInput from './../shared/TextInput';
 
-let AuthorForm = React.createClass({
-    propTypes: {
-        author: React.PropTypes.object.isRequired,
-        onSaved: React.PropTypes.func.isRequired,
-        onChange: React.PropTypes.func.isRequired,
-        errors: React.PropTypes.object
-    },
-
-    render: function () {
+class AuthorForm extends Component{
+    render() {
         return (
             <form>
                 <h1>Manage Author</h1>
@@ -21,6 +14,13 @@ let AuthorForm = React.createClass({
             </form>
         );
     }
-});
+};
+
+AuthorForm.PropTypes = {
+    author: React.PropTypes.object.isRequired,
+    onSaved: React.PropTypes.func.isRequired,
+    onChange: React.PropTypes.func.isRequired,
+    errors: React.PropTypes.object
+};
 
 export default AuthorForm;
