@@ -5,8 +5,8 @@ import { RouteHandler } from 'react-router';
 import Header from './shared/header';
 
 
-let App = React.createClass({
-    render: function() {
+class App extends React.Component{
+    render() {
         return (
             <div>
                 <Header />
@@ -14,6 +14,6 @@ let App = React.createClass({
             </div>
         );
     }
-});
+};
 
 export default App;
