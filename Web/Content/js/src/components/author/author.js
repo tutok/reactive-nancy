@@ -2,8 +2,6 @@
 
 import React from 'react';
 import { Link } from 'react-router';
-import { Dispatcher } from '../../dispatcher/appDispatcher';
-
 
 class Author extends React.Component{
     render() {

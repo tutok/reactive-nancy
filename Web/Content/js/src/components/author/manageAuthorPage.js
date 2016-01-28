@@ -2,13 +2,10 @@
 
 import React from 'react';
 import { Router, History, Lifecycle } from 'react-router';
+import ReactRedux from 'react-redux';
 import ToastR from 'toastr';
 import AuthorForm from './authorForm';
-import { Dispatcher } from '../../dispatcher/appDispatcher';
 import { createAuthor, updateAuthor } from './actions/actions';
-import { AuthorStore } from './../../stores/authorStore';
-import ReactRedux from 'react-redux';
-
 
 let ManageAuthorPage = React.createClass({
 
@@ -69,7 +66,7 @@ let ManageAuthorPage = React.createClass({
         return this.setState({
             author: this.state.author,
             isSaved: false
-    });
+        });
     },
 
     saveAuthor: function(event) {

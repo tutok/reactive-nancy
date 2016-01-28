@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { Router, Link } from 'react-router';
-import { AuthorStore } from './../../stores/authorStore';
 import AuthorsList from './authorsList';
 import ReactRedux from 'react-redux';
 
@@ -12,7 +11,7 @@ class AuthorsPage extends React.Component{
             <div>
                 <h1>Authors</h1>
                 <Link to={`/author`}>Add Author</Link>
-                <AuthorsList authors={this.props.authors} />
+                <AuthorsList authors={ this.props.authors } />
             </div>
         );
     }
