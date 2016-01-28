@@ -125,12 +125,12 @@ export let appStore = function(state, action) {
             });
 
         case AuthorActionsTypes.DELETE_AUTHOR:
-
+            debugger;
             let authorToDelete = state.authors.find(x => x.id === action.payload.id);
-            let indexOfAuthorToDelete = state.authors.indexOf(authorToDelete);
+            let authors = state.authors.filter(x => x !== authorToDelete);
 
             return Object.assign({}, state, {
-                authors: [...state.authors.splice(indexOfAuthorToDelete, 1)]
+                authors: [...authors]
             });
 
         default:

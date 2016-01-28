@@ -11,7 +11,7 @@ class AuthorsPage extends React.Component{
             <div>
                 <h1>Authors</h1>
                 <Link to={`/author`}>Add Author</Link>
-                <AuthorsList authors={ this.props.authors } />
+                <AuthorsList authors={ this.props.authors } dispatch={ this.props.dispatch } />
             </div>
         );
     }

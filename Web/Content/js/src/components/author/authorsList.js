@@ -2,22 +2,21 @@
 
 import React from 'react';
 import { Link } from 'react-router';
-import { Dispatcher } from '../../dispatcher/appDispatcher';
-import { deleteAuthor } from './actions/actions';
 import Toastr from 'toastr';
 import Author from './author';
-
+import { deleteAuthor } from './actions/actions';
 
 class AuthorsList extends React.Component{
 
     _deleteAuthor(id, event) {
         event.preventDefault();
 
-        Dispatcher.dispatch(deleteAuthor(id));
+        this.props.dispatch(deleteAuthor(id));
         Toastr.success('Author deleted');
     }
 
     render() {
+        debugger;
         return (
             <table>
                 <thead>
