@@ -1,11 +1,11 @@
 ﻿'use strict';
 
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
 import { Link } from 'react-router';
 import { Dispatcher } from '../../dispatcher/appDispatcher';
 
 
-class Author extends Component{
+class Author extends React.Component{
     render() {
         return (
             <tr>

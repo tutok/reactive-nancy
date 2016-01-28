@@ -9,8 +9,6 @@ import ManageAuthorPage from './components/author/manageAuthorPage';
 import AboutPage from './components/about/aboutPage';
 import NotFoundPage from './components/errors/notFoundPage';
 
-
-
 function onEnter(location, transition, callback) {
     if (confirm('Are you shure?') == false) {
         //transition.to('/about');

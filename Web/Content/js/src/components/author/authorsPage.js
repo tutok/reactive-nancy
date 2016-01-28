@@ -1,39 +1,21 @@
 ﻿'use strict';
 
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
 import { Router, Link } from 'react-router';
-import AuthorStore from './../../stores/authorStore';
+import { AuthorStore } from './../../stores/authorStore';
 import AuthorsList from './authorsList';
+import ReactRedux from 'react-redux';
 
-class AuthorsPage extends Component{
-    constructor(props) {
-        super(props);
-        
-        this.state = {
-            authors: AuthorStore.getAllAuthors()
-        };
-        this._onChange = this._onChange.bind(this);
-
-        AuthorStore.addChangeListener(this._onChange);
-    }
-
-    componentWillUnmount() {
-        AuthorStore.removeChangeListener(this._onChange);
-    }
-
-    _onChange() {
-        this.setState({ authors: AuthorStore.getAllAuthors() });
-    }
-
+class AuthorsPage extends React.Component{
     render() {
         return (
             <div>
                 <h1>Authors</h1>
                 <Link to={`/author`}>Add Author</Link>
-                <AuthorsList authors={this.state.authors} />
+                <AuthorsList authors={this.props.authors} />
             </div>
         );
     }
 };
 
-export default AuthorsPage;
+export default ReactRedux.connect(x => x)(AuthorsPage);

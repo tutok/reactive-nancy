@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
 import { Link } from 'react-router';
 import { Dispatcher } from '../../dispatcher/appDispatcher';
 import { deleteAuthor } from './actions/actions';
@@ -8,7 +8,7 @@ import Toastr from 'toastr';
 import Author from './author';
 
 
-class AuthorsList extends Component{
+class AuthorsList extends React.Component{
 
     _deleteAuthor(id, event) {
         event.preventDefault();

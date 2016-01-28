@@ -6,8 +6,9 @@ import ToastR from 'toastr';
 import AuthorForm from './authorForm';
 import { Dispatcher } from '../../dispatcher/appDispatcher';
 import { createAuthor, updateAuthor } from './actions/actions';
+import { AuthorStore } from './../../stores/authorStore';
+import ReactRedux from 'react-redux';
 
-import AuthorStore from './../../stores/authorStore';
 
 let ManageAuthorPage = React.createClass({
 
@@ -22,10 +23,13 @@ let ManageAuthorPage = React.createClass({
     },
 
     componentWillMount: function() {
+        debugger;
         let authorId = this.props.params.id;
 
         if (authorId) {
-            this.setState({author: AuthorStore.getAuthorById(authorId)});
+            this.setState({
+                author: this.props.authors.find(x => x.id === authorId)
+            });
         }
     },
 
@@ -74,13 +78,11 @@ let ManageAuthorPage = React.createClass({
         if (!this.authorFormIsValid()) {
             return;
         }
-        debugger;
+
         if (this.state.author.id) {
-            Dispatcher.dispatch(updateAuthor(this.state.author));
-            //AuthorActions.updateAuthor(this.state.author);
+            this.props.dispatch(updateAuthor(this.state.author));
         } else {
-            Dispatcher.dispatch(createAuthor(this.state.author));
-            //AuthorActions.createAuthor(this.state.author);
+            this.props.dispatch(createAuthor(this.state.author));
         }
 
         this.setState({ isSaved: true });
@@ -89,6 +91,7 @@ let ManageAuthorPage = React.createClass({
     },
 
     render: function () {
+        debugger;
         return (
             <AuthorForm author={ this.state.author }
                         onChange={ this.setAuthorState }
@@ -98,4 +101,4 @@ let ManageAuthorPage = React.createClass({
     }
 });
 
-export default ManageAuthorPage;
+export default ReactRedux.connect(x => x)(ManageAuthorPage);

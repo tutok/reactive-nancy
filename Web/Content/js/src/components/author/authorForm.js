@@ -1,9 +1,9 @@
 ﻿'use strict';
 
-import React, { Component, PropTypes} from 'react';
+import React from 'react';
 import TextInput from './../shared/TextInput';
 
-class AuthorForm extends Component{
+class AuthorForm extends React.Component{
     render() {
         return (
             <form>

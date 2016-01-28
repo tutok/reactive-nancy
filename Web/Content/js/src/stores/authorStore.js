@@ -9,7 +9,8 @@ import { createStore } from 'redux';
 
 const CHANGE_EVENT = 'change';
 let _authors = [];
-let AuthorStore = Object.assign({}, EventEmitter.prototype, {
+
+export let AuthorStore = Object.assign({}, EventEmitter.prototype, {
     addChangeListener: function(callback) {
         this.on(CHANGE_EVENT, callback);
     },
@@ -38,8 +39,7 @@ let AuthorStore = Object.assign({}, EventEmitter.prototype, {
     }
 });
 
-
-function dispather(state = {a: 0}, action) {
+function dispather(action) {
     debugger;
 
     switch (action.type) {
@@ -73,13 +73,67 @@ function dispather(state = {a: 0}, action) {
         default:
             //no op
     }
-
-    return state;
 }
-Dispatcher.register(action => dispather(0, action));
+Dispatcher.register(action => dispather(action));
 
-const store = createStore(dispather);
 
-debugger;
 
-export default AuthorStore;
+
+
+
+
+const initialState = {
+    authors: []
+};
+
+export let appStore = function(state, action) {
+
+    debugger;
+
+    if (typeof state === 'undefined') {
+        return initialState;
+    }
+
+    switch (action.type) {
+        //case ActionTypes.INITIALIZE:
+
+        //    //_authors = action.initialData.authors;
+        //    //AuthorStore.emitChange();
+        //    break;
+
+        case AuthorActionsTypes.CREATE_AUTHOR:
+            return Object.assign({}, state, {
+                authors: [
+                    ...state.authors,
+                    Object.assign({}, action.payload.author)
+                ]
+            });
+
+        case AuthorActionsTypes.UPDATE_AUTHOR:
+            let existingAuthor = state.authors.find(x => x.id === action.payload.author.id);
+            let existingAuthorIndex = state.authors.indexOf(existingAuthor);
+
+            return Object.assign({}, state, {
+                authors: [
+                    ...state.authors.slice(0, existingAuthorIndex),
+                    Object.assign({}, state.authors[existingAuthorIndex], {
+                        firstName: action.payload.author.firstName,
+                        lastName: action.payload.author.lastName,
+                    }),
+                    ...state.authors.slice(existingAuthorIndex + 1)
+                ]
+            });
+
+        case AuthorActionsTypes.DELETE_AUTHOR:
+
+            let authorToDelete = state.authors.find(x => x.id === action.payload.id);
+            let indexOfAuthorToDelete = state.authors.indexOf(authorToDelete);
+
+            return Object.assign({}, state, {
+                authors: [...state.authors.splice(indexOfAuthorToDelete, 1)]
+            });
+
+        default:
+            return state;
+    }
+}
